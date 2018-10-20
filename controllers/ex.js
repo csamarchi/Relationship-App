@@ -18,13 +18,19 @@ router.get('/new', (req, res) => {
 
 //post route
 router.post('/', (req, res) => {
-  console.log(req.body);
   Ex.create(req.body, (err, exFound) => {
     res.redirect('/ex')
   });
 });
 
-
+//show route
+router.get('/:index', (req, res) => {
+  Ex.findById(req.params.index, (err, foundEx) => {
+    res.render('./ex/show.ejs', {
+      ex: foundEx
+    });
+  });
+});
 
 
 

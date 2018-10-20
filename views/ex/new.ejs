@@ -14,17 +14,24 @@
 
     <form action="/ex" method="POST">
       Name: </br> <input type="text" name="name"></br></br>
+      Sex: </br> <input type="radio" name="sex" value="male"> male
+                 <input type="radio" name="sex" value="female"> female</br></br>
       Location: </br> <input type="text" name="location"></br></br>
       Paste Image: </br> <input type="text" name="image"></br></br>
       Their Best Quality: </br> <input type="text" name="best"></br></br>
       Worst Quality: </br> <input type="text" name="worst"> </br></br>
       Attractiveness Scale 1-10: <input type="range" min="1" max="10" name="attractiveness"></br></br>
-      Do they have a sense of humor?<input type="checkbox" name="humor"> </br></br>
-      Are they Cheap? <input type="checkbox" name="cheap"></br></br>
-      Good Attitude? <input type="checkbox" name="attitude"></br></br>
+      Do they have a sense of humor?</br><input type="radio" name="humor" value="yes"> So funny</br>
+                                         <input type="radio" name="humor" value="kinda"> Kinda</br>
+                                         <input type="radio" name="humor" value="no"> No sense of humor</br></br>
+      Are they Cheap? <input type="radio" name="cheap" value="yes">yes
+                      <input type="radio" name="cheap" value="no"> no </br></br>
+
+      Good Attitude? <input type="radio" name="attitude" value="yes"> yes
+                     <input type="radio" name="attitude" value="no"> no </br></br>
       Anything else you would like to add </br> <input type="text" name="description"></br>
       </br><input type="submit" value="Submit">
     </form>
-    
+
   </body>
 </html>
