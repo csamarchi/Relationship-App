@@ -44,7 +44,11 @@
         <p>A little bit more on <%=ex.name %>:</p>
         <p><%=ex.description %></p>
 
-
+<section>
+  <form action="/ex/<%=ex.id%>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete Ex">
+  </form>
+</section>
     </main>
   </body>
 </html>

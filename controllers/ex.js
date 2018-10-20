@@ -32,6 +32,12 @@ router.get('/:index', (req, res) => {
   });
 });
 
+//delete route
+router.delete('/:index', (req, res) => {
+  Ex.findByIdAndRemove(req.params.index, (err, foundEx) => {
+    res.redirect('/ex')
+  });
+});
 
 
 
