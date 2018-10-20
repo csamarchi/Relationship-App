@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+   <header>
+    <h1>Edit User</h1>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a>
+            </li>
+            <li><a href="/user/new">Create new User
+                
+            </a></li>
+        </ul>
+    </nav>
+    </header>
+    <main>
+        <ul>
+            <% for (let i = 0; i < user.length; i++) <%{%>
+             <a href="/user/<%user.length[i].id%>">
+             <%=user[i].name%>
+            }
+        </ul>
+    </main>
+</body>
+</html>
