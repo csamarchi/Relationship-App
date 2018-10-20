@@ -6,10 +6,11 @@ const exSchema = new mongoose.Schema({
   image: String,
   best: String,
   worst: String,
-  humor: Boolean,
   attractiveness: Number,
+  humor: Boolean,
   cheap: Boolean,
-  attitude: String,
+  attitude: Boolean,
+  description: String
 });
 
 module.exports = mongoose.model('Ex', exSchema);

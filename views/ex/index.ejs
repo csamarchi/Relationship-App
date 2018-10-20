@@ -8,11 +8,19 @@
     <h1>Ex Index Page</h1>
     <nav>
       <ul>
-        <li><a href="/">Add Ex</a></li>
+        <li><a href="/ex/new">Add Ex</a></li>
         <li><a href="/">Your Profile</a></li>
-
       </ul>
     </nav>
+    <main>
+      <% for (let i = 0; i < ex.length; i++) { %>
+        <li><%= ex[i].name %></li>
+        <form action="/ex/<%=ex[i].id%>" method="GET">
+          <a href="/ex/<%=ex[i].id%>"><%=ex[i].username%></a>
+        </form>
+        <img src="<%=ex[i].image%>" alt="">
+    <%  } %>
+    </main>
 
   </body>
 </html>

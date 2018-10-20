@@ -11,6 +11,18 @@ router.get('/', (req, res) => {
   });
 });
 
+//new route
+router.get('/new', (req, res) => {
+  res.render('./ex/new.ejs')
+})
+
+//post route
+router.post('/', (req, res) => {
+  console.log(req.body);
+  Ex.create(req.body, (err, exFound) => {
+    res.redirect('/ex')
+  });
+});
 
 
 

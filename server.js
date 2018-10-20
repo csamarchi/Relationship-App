@@ -12,15 +12,11 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(methodOverride('_method'));
 app.use('/ex', exController);
 
+
+
 app.get('/', (req, res) => {
   res.send('what up')
 })
-
-
-
-
-
-
 
 
 
