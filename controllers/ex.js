@@ -39,6 +39,23 @@ router.delete('/:index', (req, res) => {
   });
 });
 
+//edit route
+router.get('/:index/edit', (req, res) => {
+  Ex.findById(req.params.index, (err, foundEx) => {
+    res.render('ex/edit.ejs', {
+      ex: foundEx
+    })
+  });
+});
+
+//update route
+router.put('/:index', (req, res) => {
+  Ex.findByIdAndUpdate(req.params.index, req.body, (err, updateEx) => {
+    res.redirect('/ex/' + req.params.index)
+  });
+})
+
+
 
 
 
