@@ -12,4 +12,4 @@ const exSchema = new mongoose.Schema({
   attitude: String,
 });
 
-module.exports = mongoose.model('Ex', userSchema);
+module.exports = mongoose.model('Ex', exSchema);
