@@ -18,6 +18,11 @@ router.get('/new', (req, res) => {
     });
 
 
+router.post('/', (req, res) => {
+    User.create(req.body, (err, foundUser)=> {
+        res.redirect('/user')
+    });
+});
 
 
 
