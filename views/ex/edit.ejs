@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Edit your Ex</h1>
+    <nav>
+      <ul>
+        <li><a href="/ex">Home</a></li>
+        <li><a href="/">Your Profile</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1> Edit <%=ex.name%></h1>
+      <img src="<%=ex.image%>" alt=""></br>
+
+      <form action="/ex/<%=ex.id%>?_method=PUT" method="POST">
+        Name: </br> <input type="text" name="name" value="<%=ex.name%>"></br></br>
+        Sex: </br> <input type="radio" name="sex" value="male"> male
+                   <input type="radio" name="sex" value="female"> female</br></br>
+        Location: </br> <input type="text" name="location" value="<%=ex.location%>"></br></br>
+        Paste Image: </br> <input type="text" name="image" value="<%=ex.image%>"></br></br>
+        Their Best Quality: </br> <input type="text" name="best" value="<%=ex.best%>"></br></br>
+        Worst Quality: </br> <input type="text" name="worst" value="<%=ex.worst%>"> </br></br>
+        Attractiveness Scale 1-10: <input type="range" min="1" max="10" name="attractiveness" value="<%=ex.attractiveness%>"></br></br>
+        Do they have a sense of humor?</br><input type="radio" name="humor" value="yes"> So funny</br>
+                                           <input type="radio" name="humor" value="kinda"> Kinda</br>
+                                           <input type="radio" name="humor" value="no"> No sense of humor</br></br>
+        Are they Cheap? <input type="radio" name="cheap" value="yes">yes
+                        <input type="radio" name="cheap" value="no"> no </br></br>
+
+        Good Attitude? <input type="radio" name="attitude" value="yes"> yes
+                       <input type="radio" name="attitude" value="no"> no </br></br>
+        Anything else you would like to add </br> <input type="text" name="description" value="<%=ex.description%>"></br>
+        </br><input type="submit" value="Submit">
+      </form>
+    </br></br>
+      <section>
+        <form action="/ex/<%=ex.id%>?_method=DELETE" method="POST">
+          <input type="submit" value="Delete Ex">
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

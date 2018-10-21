@@ -2,14 +2,16 @@ const mongoose = require('mongoose');
 
 const exSchema = new mongoose.Schema({
   name: String,
+  sex: String,
   location: String,
   image: String,
   best: String,
   worst: String,
-  humor: Boolean,
   attractiveness: Number,
-  cheap: Boolean,
+  humor: String,
+  cheap: String,
   attitude: String,
+  description: String
 });
 
-module.exports = mongoose.model('Ex', userSchema);
+module.exports = mongoose.model('Ex', exSchema);

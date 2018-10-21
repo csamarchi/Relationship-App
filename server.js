@@ -5,6 +5,13 @@ const methodOverride = require('method-override');
 
 require('./db/db');
 
+const exController   = require('./controllers/ex');
+
+//middleware
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(methodOverride('_method'));
+app.use('/ex', exController);
+
 
 //app.get('/user/:index'(req, res) => {
 //    consoole.log(req.params)
@@ -16,13 +23,6 @@ require('./db/db');
 //
 //
 //
-
-
-
-
-
-
-
 
 
 app.listen(3000, () => {
