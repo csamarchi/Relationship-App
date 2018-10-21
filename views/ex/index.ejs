@@ -1,31 +1,31 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Ex Index Page</h1>
-    <nav>
-      <ul>
-        <li><a href="/ex/new">Add Ex</a></li>
-        <li><a href="/">Your Profile</a></li>
-      </ul>
 
-      <form action="/ex/showAll" method="POST">
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Ex Index Page</h1>
+  <nav>
+    <ul>
+      <li><a href="/ex/new">Add Ex</a></li>
+      <li><a href="/">Your Profile</a></li>
+    </ul>
+    <!-- Search Form -->
+    <form action="/ex/showAll" method="POST">
       <input type="text" name="name" placeholder="Search..."><input type="submit" value="Submit">
-      </form>
-
-
-    </nav>
-    <main>
-      <% for (let i = 0; i < ex.length; i++) { %>
-        <form action="/ex/<%=ex[i].id%>" method="GET">
-          <a href="/ex/<%=ex[i].id%>"><%=ex[i].name%></a>
-        </form>
-        <img src="<%=ex[i].image%>" alt="">
+    </form>
+  </nav>
+  <main>
+    <% for (let i = 0; i < ex.length; i++) { %>
+    <form action="/ex/<%=ex[i].id%>" method="GET">
+      <a href="/ex/<%=ex[i].id%>">
+        <%=ex[i].name%></a>
+    </form>
+    <img src="<%=ex[i].image%>" alt="">
     <%  } %>
-    </main>
-
-  </body>
+  </main>
+</body>
 </html>

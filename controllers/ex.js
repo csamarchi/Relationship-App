@@ -1,6 +1,6 @@
 const express = require('express');
-const router  = express.Router();
-const Ex      = require('../models/ex');
+const router = express.Router();
+const Ex = require('../models/ex');
 
 //index route
 router.get('/', (req, res) => {
@@ -25,7 +25,9 @@ router.post('/', (req, res) => {
 
 //search route
 router.post('/showAll', (req, res) => {
-  Ex.find({name: req.body.name}, (err, foundExes) => {
+  Ex.find({
+    name: req.body.name
+  }, (err, foundExes) => {
     res.render('./ex/showAll.ejs', {
       filteredName: req.body.name,
       filteredExes: foundExes
@@ -65,7 +67,6 @@ router.put('/:index', (req, res) => {
     res.redirect('/ex/' + req.params.index)
   });
 })
-
 
 
 

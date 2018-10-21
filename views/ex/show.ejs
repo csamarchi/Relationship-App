@@ -1,53 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    <h1>Ex Show Page</h1>
-    <nav>
-      <ul>
-        <li><a href="/ex">Back</a></li>
-        <li><a href="/">Your Profile</a></li>
-      </ul>
-    </nav>
-    <main>
-      <h1> <%=ex.name %></h1>
-      <img src="<%=ex.image%>" alt=""></br>
-      <p>From: <%= ex.location %></p>
-      <p>Best quality: <%= ex.best %></p>
-      <p>Worst quality: <%= ex.worst %></p>
-      <p>Attractiveness out of 10: <%=ex.attractiveness %></p>
+
+<head>
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
+  <h1>Ex Show Page</h1>
+  <nav>
+    <ul>
+      <li><a href="/ex">Home</a></li>
+      <li><a href="/">Your Profile</a></li>
+    </ul>
+  </nav>
+  <main>
+    <h1>
+      <%=ex.name %>
+    </h1>
+    <img src="<%=ex.image%>" alt=""></br>
+      <p>From:<%= ex.location %></p>
+      <p>Best quality:<%= ex.best %></p>
+      <p>Worst quality:<%= ex.worst %></p>
+      <p>Attractiveness out of 10:<%=ex.attractiveness %></p>
       <% if (ex.humor === 'yes') { %>
-        They are super funny
+          They are super funny
       <% } else if (ex.humor === 'kinda'){ %>
-        They have a sense of humor
-       <% } else if (ex.humor === 'no') { %>
-         They have no sense of humor
-       <% } %>
-     </br>
+          They have a sense of humor
+      <% } else if (ex.humor === 'no') { %>
+          They have no sense of humor
+      <% } %>
+        </br>
 
-       <% if (ex.cheap === 'yes') { %>
-         Theyve been known to be cheap
-       <% }  else if (ex.cheap === 'no'){ %>
-         They arent cheap
+      <% if (ex.cheap === 'yes') { %>
+          Theyve been known to be cheap
+      <% }  else if (ex.cheap === 'no'){ %>
+          They arent cheap
       <% }%>
-    </br>
+        </br>
 
-       <% if (ex.attitude === 'yes') { %>
-         They have a great attitude
-       <% } else if (ex.attitude === 'no'){ %>
-         They have a bad attitude
-        <% } %>
+      <% if (ex.attitude === 'yes') { %>
+          They have a great attitude
+      <% } else if (ex.attitude === 'no'){ %>
+          They have a bad attitude
+      <% } %>
 
-        <p>A little bit more on <%=ex.name %>:</p>
-        <p><%=ex.description %></p>
-<section>
-<a href="/ex/<%=ex.id%>/edit">Edit Ex</a>
-</section></br></br>
-
-
-    </main>
-  </body>
+    <p>A little bit more on<%=ex.name %>:</p>
+    <p><%=ex.description %></p>
+    <section>
+      <a href="/ex/<%=ex.id%>/edit">Edit Ex</a>
+    </section></br></br>
+  </main>
+</body>
 </html>
