@@ -11,6 +11,12 @@
         <li><a href="/ex/new">Add Ex</a></li>
         <li><a href="/">Your Profile</a></li>
       </ul>
+
+      <form action="/ex/showAll" method="POST">
+      <input type="text" name="name" placeholder="Search..."><input type="submit" value="Submit">
+      </form>
+
+
     </nav>
     <main>
       <% for (let i = 0; i < ex.length; i++) { %>

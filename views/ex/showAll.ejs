@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <h1>Search for <%=filteredName%></h1>
+  <% for (let i = 0; i < filteredExes.length; i++) { %>
+    <form action="/ex/<%=filteredExes[i].id%>" method="GET">
+      <a href="/ex/<%=filteredExes[i].id%>"><%=filteredExes[i].name%></a>
+    </form>
+    <img src="<%=filteredExes[i].image%>" alt="">
+  <%  } %>
+  </body>
+</html>

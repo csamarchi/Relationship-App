@@ -23,6 +23,17 @@ router.post('/', (req, res) => {
   });
 });
 
+//search route
+router.post('/showAll', (req, res) => {
+  Ex.find({name: req.body.name}, (err, foundExes) => {
+    res.render('./ex/showAll.ejs', {
+      filteredName: req.body.name,
+      filteredExes: foundExes
+    });
+  });
+});
+
+
 //show route
 router.get('/:index', (req, res) => {
   Ex.findById(req.params.index, (err, foundEx) => {
@@ -54,6 +65,11 @@ router.put('/:index', (req, res) => {
     res.redirect('/ex/' + req.params.index)
   });
 })
+
+
+
+
+
 
 
 
