@@ -6,9 +6,10 @@ const methodOverride = require('method-override');
 require('./db/db');
 
 
-app.get('/', (req, res) => {
-  res.send('what up')
-})
+app.get('./user/:index'(req, res) => {
+    consoole.log(req.params)
+    res.send(req.params.index)
+});
 
 
 
