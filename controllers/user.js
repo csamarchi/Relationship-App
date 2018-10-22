@@ -25,8 +25,8 @@ router.get('/new', (req, res) => {
 //<--- After creating new user this redirects --->
 router.post('/', async (req, res) => {
     try {
-        await User.create(req.params.id)
-        res.redirect('/user', {});
+        await User.create(req.body)
+        res.redirect('/user');
     } catch (err) {
         res.send(err)
         //Catch Statement
@@ -45,7 +45,7 @@ router.get('/:index', (req, res) => {
 //<--- edit user --->
 router.get('/:index/edit', async (req, res) => {
         try { 
-            const userEdit = await User.findByID(req.params.index)
+            const userEdit = await User.findById(req.params.index)
             res.render('./user/edit.ejs', {
                 user: userEdit
             });
