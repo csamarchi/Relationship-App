@@ -5,13 +5,16 @@ const Ex = require('../models/ex')
 
 
 //<--- Sign in page --->
-router.get('/', (req, res) => {
-    User.find({}, (err, foundUser) => {
-        console.log("new user function")
-        res.render('./user/index.ejs', {
-            user: foundUser
-        });
+router.get('/', async (req, res) => {
+try {
+    const newUser = await User.find();
+    res.render('./user/index.ejs', {
+        user: newUser
     });
+} catch (err) {
+    res.send(err)
+    //Catch Statement
+}
 });
 
 //<--- show new page --->
@@ -20,10 +23,15 @@ router.get('/new', (req, res) => {
 });
 
 //<--- After creating new user this redirects --->
-router.post('/', (req, res) => {
-    User.create(req.body, (err, foundUser) => {
-        res.redirect('/user')
-    });
+router.post('/', async (req, res) => {
+    try {
+await User.create(req.params.id) 
+            res.redirect('/user', {
+        });
+    } catch(err) {
+        res.send(err)
+        //Catch Statement
+    }
 });
 
 //<--- Show user --->
@@ -36,17 +44,13 @@ router.get('/:index', (req, res) => {
 });
 
 //<--- edit user --->
-router.get('/:index/edit', async (req, res) => {
-
-try {
-    const newUser = await User.find();
-    res.render('./user/edit.ejs', {
-        user: foundUser
+router.get('/:index/edit', (req, res) => {
+    User.findById(req.params.index, (err, foundUser) => {
+        console.log("edit user works")
+        res.render('./user/edit.ejs', {
+            user: foundUser
+        });
     });
-} catch (e) {
-    res.send(err)
-    //Catch Statement
-}
 });
 
 router.put('/:index', (req, res) => {
