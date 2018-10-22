@@ -54,33 +54,35 @@ router.get('/:index', (req, res) => {
 });
 
 //delete route
-router.delete('/:index', (req, res) => {
-  Ex.findByIdAndRemove(req.params.index, (err, foundEx) => {
+router.delete('/:index', async (req, res) => {
+  try {
+    await Ex.findByIdAndRemove(req.params.index);
     res.redirect('/ex')
-  });
+  } catch(err) {
+    res.send(err)
+  }
 });
 
 //edit route
-router.get('/:index/edit', (req, res) => {
-  Ex.findById(req.params.index, (err, foundEx) => {
-    res.render('ex/edit.ejs', {
-      ex: foundEx
+router.get('/:index/edit', async (req, res) => {
+  try {
+    const exEdit = await Ex.findById(req.params.index)
+    res.render('./ex/edit.ejs', {
+      ex: exEdit
     })
-  });
+  } catch(err) {
+    res.send(err)
+  }
 });
 
 //update route
 router.put('/:index', async (req, res) => {
   try {
-    await Ex.findByIdAndRemove(req.params.index)
+    await Ex.findByIdAndUpdate(req.params.index, req.body)
     res.redirect('/ex')
   } catch(err) {
     res.send(err)
   }
-
-  // Ex.findByIdAndUpdate(req.params.index, req.body, (err, updateEx) => {
-  //   res.redirect('/ex/' + req.params.index)
-  // });
 })
 
 
