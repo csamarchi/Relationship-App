@@ -3,13 +3,17 @@ const router = express.Router();
 const Ex = require('../models/ex');
 
 //index route
-router.get('/', (req, res) => {
-  Ex.find({}, (err, foundEx) => {
-    res.render('./ex/index.ejs', {
-      ex: foundEx
+router.get('/', async (req, res) => {
+  try {
+    const allExes = await Ex.find();
+    res.render('ex/index.ejs', {
+      ex: allExes
     });
-  });
+  } catch (err) {
+    res.send(err)
+  }
 });
+
 
 //new route
 router.get('/new', (req, res) => {
