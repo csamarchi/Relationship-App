@@ -36,20 +36,24 @@ router.get('/:index', (req, res) => {
 });
 
 //<--- edit user --->
-router.get('/:index/edit', (req, res) => {
-    User.findById(req.params.index, (err, foundUser) => {
-        console.log("edit user works")
-        res.render('./user/edit.ejs', {
-            user: foundUser
-        });
+router.get('/:index/edit', async (req, res) => {
+
+try {
+    const newUser = await User.find();
+    res.render('./user/edit.ejs', {
+        user: foundUser
     });
+} catch (e) {
+    res.send(err)
+    //Catch Statement
+}
 });
 
 router.put('/:index', (req, res) => {
     console.log(req.body);
     User.findByIdAndUpdate(req.params.index, req.body, (err, foundUser) => {
-            res.redirect('/');
-        });
+        res.redirect('/');
+    });
 
 });
 //<--- delete user --->
