@@ -7,7 +7,7 @@ const Ex = require('../models/ex')
 //<--- Sign in page --->
 router.get('/', (req, res) => {
     User.find({}, (err, foundUser) => {
-        console.log("hey")
+        console.log("new user function")
         res.render('./user/index.ejs', {
             user: foundUser
         });
