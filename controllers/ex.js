@@ -1,26 +1,45 @@
 const express = require('express');
 const router = express.Router();
 const Ex = require('../models/ex');
+const User = require('../models/user');
 
 //index route
-router.get('/', (req, res) => {
-  Ex.find({}, (err, foundEx) => {
-    res.render('./ex/index.ejs', {
-      ex: foundEx
+router.get('/', async (req, res) => {
+  try {
+    const allExes = await Ex.find();
+    res.render('ex/index.ejs', {
+      ex: allExes
     });
-  });
+  } catch (err) {
+    res.send(err)
+  }
 });
+
+//link route
+router.get('/:index/user', (req, res) => {
+  Ex.findById(req.params.index, (err, exFound) => {
+    user.find({}, (err, userFound) => {
+      res.render('./ex/show.ejs' , {
+        ex: exFound,
+        user: userFound
+      })
+    })
+  })
+})
 
 //new route
 router.get('/new', (req, res) => {
-  res.render('./ex/new.ejs')
+  res.render('./ex/new.ejs', {})
 })
 
 //post route
-router.post('/', (req, res) => {
-  Ex.create(req.body, (err, exFound) => {
-    res.redirect('/ex')
-  });
+router.post('/', async (req, res) => {
+  try {
+    await Ex.create(req.body);
+    await res.redirect('/ex')
+  } catch (err) {
+    res.send(err);
+  }
 });
 
 //search route
@@ -46,33 +65,36 @@ router.get('/:index', (req, res) => {
 });
 
 //delete route
-router.delete('/:index', (req, res) => {
-  Ex.findByIdAndRemove(req.params.index, (err, foundEx) => {
+router.delete('/:index', async (req, res) => {
+  try {
+    await Ex.findByIdAndRemove(req.params.index);
     res.redirect('/ex')
-  });
+  } catch(err) {
+    res.send(err)
+  }
 });
 
 //edit route
-router.get('/:index/edit', (req, res) => {
-  Ex.findById(req.params.index, (err, foundEx) => {
-    res.render('ex/edit.ejs', {
-      ex: foundEx
+router.get('/:index/edit', async (req, res) => {
+  try {
+    const exEdit = await Ex.findById(req.params.index)
+    res.render('./ex/edit.ejs', {
+      ex: exEdit
     })
-  });
+  } catch(err) {
+    res.send(err)
+  }
 });
 
 //update route
-router.put('/:index', (req, res) => {
-  Ex.findByIdAndUpdate(req.params.index, req.body, (err, updateEx) => {
-    res.redirect('/ex/' + req.params.index)
-  });
+router.put('/:index', async (req, res) => {
+  try {
+    await Ex.findByIdAndUpdate(req.params.index, req.body)
+    res.redirect('/ex')
+  } catch(err) {
+    res.send(err)
+  }
 })
-
-
-
-
-
-
 
 
 
