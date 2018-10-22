@@ -70,17 +70,18 @@ router.get('/:index/edit', (req, res) => {
 });
 
 //update route
-router.put('/:index', (req, res) => {
-  Ex.findByIdAndUpdate(req.params.index, req.body, (err, updateEx) => {
-    res.redirect('/ex/' + req.params.index)
-  });
+router.put('/:index', async (req, res) => {
+  try {
+    await Ex.findByIdAndRemove(req.params.index)
+    res.redirect('/ex')
+  } catch(err) {
+    res.send(err)
+  }
+
+  // Ex.findByIdAndUpdate(req.params.index, req.body, (err, updateEx) => {
+  //   res.redirect('/ex/' + req.params.index)
+  // });
 })
-
-
-
-
-
-
 
 
 
