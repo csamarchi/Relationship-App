@@ -7,14 +7,17 @@
 <body>
     <h1>Edit a User</h1>
       <p>
+      <form action="/user/<%=user.id%>?_method=PUT" method="POST">
        Name: <input type="text" name="name" value="<%=user.name%>"><br>
        Username: <input type="text" name="username" value="<%=user.username%>"><br>
        Password: <input type="text" name="password" value="<%=user.password%>"><br>
        Location: <input type="text" name="location" value="<%=user.location%>"><br>
        Sex: <input type="radio" name="sex" value="<%=user.sex%>"><br>
        Image: <input type="text" name="img" value="<%=user.image%>"><br>
-       Submit: <input type="submit" name="submit" id="">
-       Edit User: <input type="submit" name="Edit User" href="/user/<%=user.id%>/edit">
-       </p>
+       Edit User: <input type="submit" value="Submit">
+       
+      </p>
+     </form>
+
 </body>
 </html>

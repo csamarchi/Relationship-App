@@ -17,7 +17,11 @@ app.use('/user', userController);
 app.get('/', (req, res) => {
   res.send('what up')
 })
-
+//app.use(session({
+//    secret:
+//    resave: false,
+//    saveUninitialized: false
+//}))
 
 
 
