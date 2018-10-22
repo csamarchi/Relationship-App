@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
 </head>
+
 <body>
     <h1>New User</h1>
-    <form action="/user" method="POST"><br>
-        <input type="text" name="name"><br>
-                <input type="text" name="username"><br>
-        <input type="text" name="password"><br>
-           <input type="text" name="location"><br>
-        <input type="text" name="sex"><br>
-        <input type="text" name="img"><br>
-        <input type="submit" name="submit" id="">
-    </form>
+    <form action="/user/" method="POST"><br>
+        Name: <input type="text" name="name" value="<%=user.name%>"><br>
+       Username: <input type="text" name="username" value="<%=user.username%>"><br>
+       Password: <input type="text" name="password" value="<%=user.password%>"><br>
+       Location: <input type="text" name="location" value="<%=user.location%>"><br>
+       Sex: <input type="radio" name="sex" value="<%=user.sex%>"><br>
+       Image: <input type="text" name="img" value="<%=user.image%>"><br>
+    </form>        
 </body>
+
 </html>

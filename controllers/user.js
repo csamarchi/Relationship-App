@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     });
 });
 
-//<--- Show route --->
+//<--- Show user --->
 router.get('/:index', (req, res) => {
     User.findById(req.params.index, (err, foundUser) => {
         res.render('./user/show.ejs', {
@@ -35,6 +35,22 @@ router.get('/:index', (req, res) => {
     });
 });
 
+//<--- edit user --->
+//router.get('/:index/', (req, res) => {
+//  User.findById(req.params.index, (err, foundUser) => {
+//      console.log("edit user works")
+//    res.render('user/edit.ejs', {
+//      user: foundUser
+//    });
+//  });
+//});
+//<--- delete user --->
+
+router.delete('/:index', (req, res) => {
+    User.findByIdAndRemove(req.params.index, (err, foundUser) => {
+        res.redirect('/user/')
+    });
+});
 
 
 module.exports = router;

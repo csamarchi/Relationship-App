@@ -11,16 +11,19 @@
     <nav>
         <ul>
             <li>
-        <% for(let i =0; i < user.length; i++){ %>
-        
-        <form action="/user/<%=user[i].id%>" method="GET">
-        <a href="/user/<%=user[i].id%>"><%=user[i].name%>
+                <% for(let i =0; i < user.length; i++){ %>
+
+                <form action="/user/<%=user[i].id%>" method="GET">
+                    <a href="/user/<%=user[i].id%>">
+                        <%=user[i].name%>
                     </a>
-                    </form>
+                </form>
                 <% } %>
+
             </li>
         </ul>
     </nav>
+
 </body>
 
 </html>

@@ -5,21 +5,16 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Profile page</h1>
-    <p>
-        something
-    </p>
-    <p>
-           Name: <input type="text" name="name" value="<%=user.name%>"><br>
+    <h1>Edit a User</h1>
+      <p>
+       Name: <input type="text" name="name" value="<%=user.name%>"><br>
        Username: <input type="text" name="username" value="<%=user.username%>"><br>
        Password: <input type="text" name="password" value="<%=user.password%>"><br>
        Location: <input type="text" name="location" value="<%=user.location%>"><br>
-       Sex: <input type="text" name="sex" value="<%=user.sex%>"><br>
+       Sex: <input type="radio" name="sex" value="<%=user.sex%>"><br>
        Image: <input type="text" name="img" value="<%=user.image%>"><br>
        Submit: <input type="submit" name="submit" id="">
-    </p>
-    <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete User">
-    </form>
+       <a href="/ex/<%=ex.id%>/edit">Edit Ex</a>
+       </p>
 </body>
 </html>
