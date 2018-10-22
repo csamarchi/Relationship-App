@@ -36,14 +36,14 @@ router.get('/:index', (req, res) => {
 });
 
 //<--- edit user --->
-//router.get('/:index/', (req, res) => {
-//  User.findById(req.params.index, (err, foundUser) => {
-//      console.log("edit user works")
-//    res.render('user/edit.ejs', {
-//      user: foundUser
-//    });
-//  });
-//});
+router.get('/:index/', (req, res) => {
+  User.findById(req.params.index, (err, foundUser) => {
+      console.log("edit user works")
+    res.render('user/edit.ejs', {
+      user: foundUser
+    });
+  });
+});
 //<--- delete user --->
 
 router.delete('/:index', (req, res) => {
