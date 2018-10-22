@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Ex = require('../models/ex');
+const User = require('../models/user');
 
 //index route
 router.get('/', async (req, res) => {
@@ -17,14 +18,17 @@ router.get('/', async (req, res) => {
 
 //new route
 router.get('/new', (req, res) => {
-  res.render('./ex/new.ejs')
+  res.render('./ex/new.ejs', {})
 })
 
 //post route
-router.post('/', (req, res) => {
-  Ex.create(req.body, (err, exFound) => {
-    res.redirect('/ex')
-  });
+router.post('/', async (req, res) => {
+  try {
+    await Ex.create(req.body);
+    await res.redirect('/ex')
+  } catch (err) {
+    res.send(err);
+  }
 });
 
 //search route
