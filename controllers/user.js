@@ -4,36 +4,41 @@ const User = require('../models/user')
 const Ex = require('../models/ex')
 
 
-//<--- Sign in page --->
-router.get('/', async (req, res) => {
-    try {
-        const newUser = await User.find();
+//index route
+router.get('/', (req, res) => {
+    User.find({}, (err, foundUser) => {
         res.render('./user/index.ejs', {
-            user: newUser
+            user: foundUser
         });
-    } catch (err) {
-        res.send(err)
-        //Catch Statement
-    }
+    });
 });
 
-//<--- show new page --->
+//new route
 router.get('/new', (req, res) => {
     res.render('./user/new.ejs')
+})
+
+//post route
+router.post('/', (req, res) => {
+    User.create(req.body, (err, exFound) => {
+        res.redirect('../ex')
+    });
 });
 
-//<--- After creating new user this redirects --->
-router.post('/', async (req, res) => {
-    try {
-        await User.create(req.body)
-        res.redirect('/user');
-    } catch (err) {
-        res.send(err)
-        //Catch Statement
-    }
-});
+//search route
+//router.post('/show', (req, res) => {
+//    User.find({
+//        name: req.body.name
+//    }, (err, foundUser) => {
+//        res.render('./user/show.ejs', {
+//            filteredName: req.body.name,
+//            filteredUser: foundUser
+//        });
+//    });
+//});
 
-//<--- Show user --->
+
+//show route
 router.get('/:index', (req, res) => {
     User.findById(req.params.index, (err, foundUser) => {
         res.render('./user/show.ejs', {
@@ -42,36 +47,35 @@ router.get('/:index', (req, res) => {
     });
 });
 
-//<--- edit user --->
-router.get('/:index/edit', async (req, res) => {
-        try { 
-            const userEdit = await User.findById(req.params.index)
-            res.render('./user/edit.ejs', {
-                user: userEdit
-            });
-        } catch (err) {
-            res.send(err)
-            //Catch Statement
-        }
+//delete route
+router.delete('/:index', (req, res) => {
+    User.findByIdAndRemove(req.params.index, (err, foundUser) => {
+        res.redirect('/user')
     });
+});
 
+//edit route
+router.get('/:index/edit', (req, res) => {
+    User.findById(req.params.index, (err, foundUser) => {
+        res.render('user/edit.ejs', {
+            user: foundUser
+        })
+    });
+});
+
+//update route
 router.put('/:index', (req, res) => {
-    console.log(req.body);
-    User.findByIdAndUpdate(req.params.index, req.body, (err, foundUser) => {
-        res.redirect('/');
+    User.findByIdAndUpdate(req.params.index, req.body, (err, updateUser) => {
+        res.redirect('../ex')
     });
-});
-//<--- delete user --->
+})
 
-router.delete('/:index', async (req, res) => {
-    try {
-       await User.findByIdAndRemove(req.params.index)
-            res.redirect('/user/')
-    } catch (err) {
-    res.send(err)
-        //Catch Statement
-    }
-});
+
+
+
+
+
+
 
 
 module.exports = router;
