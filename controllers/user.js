@@ -16,7 +16,8 @@ router.get('/', (req, res) => {
 //new route
 router.get('/new', (req, res) => {
     res.render('./user/new.ejs')
-})
+});
+
 
 //post route
 router.post('/', (req, res) => {
@@ -34,6 +35,7 @@ router.get('/:index', (req, res) => {
         });
     });
 });
+
 
 //delete route
 router.delete('/:index', (req, res) => {
@@ -54,14 +56,9 @@ router.get('/:index/edit', (req, res) => {
 //update route
 router.put('/:index', (req, res) => {
     User.findByIdAndUpdate(req.params.index, req.body, (err, updateUser) => {
-        res.redirect('../ex')
+        res.redirect('/user')
     });
-})
-
-
-
-
-
+});
 
 
 

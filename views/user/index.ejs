@@ -7,31 +7,31 @@
 </head>
 
 <body>
-    <h1>Login</h1> 
-  <form action="/login/" method="POST">
-    <input type="text" name="username">
-    <input type="password" name="password">
-    <button type="submit">Login</button>
-  </form>
+    <h1>Login</h1>
+    <form action="/login/" method="POST">
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <button type="submit">Login</button>
+    </form>
     <nav>
         <ul>
-      <li><a href="/userLogin/login">Sign Up</a></li>
-         
-           
+            <li><a href="/userLogin/login">Sign Up</a></li>
 
-                                <% for(let i =0; i < user.length; i++){ %>
-                 <li>
+
+
+            <% for(let i =0; i < user.length; i++){ %>
+            <li>
                 <form action="/user/<%=user[i].id%>" method="GET">
                     <a href="/user/<%=user[i].id%>">
                         <%=user[i].name%>
                     </a>
                 </form>
                 <form action="/user/<%=user[i].id%>/edit" method='GET'>
-                     <input type="submit" value="Edit User">
-                 </form>
-                 
-                 </li>
-                <% } %>
+                    <input type="submit" value="Edit User">
+                </form>
+
+            </li>
+            <% } %>
         </ul>
     </nav>
 

@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <title>Document</title>
 </head>
+
 <body>
-    <h1>Profile page</h1>
-    <p>
-        something
-    </p>
-    <p>
-           Name: <%=user.name%><br>
-       Username: <%=user.username%><br>
-       Location: <%=user.location%><br>
-       Sex: <%=user.sex%><br>
-       Image: <%=user.image%><br>
-           <form action="/user/<%=user.id%>/edit" method='GET'>
-                     <input type="submit" value="Edit Profile">
-                 </form>
-    </p>
-    <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete User">
-    </form>
+  <h1>
+    <%=user.name %>'s page</h1>
+  <nav>
+    <ul>
+      <li><a href="/user">Home</a></li>
+    </ul>
+  </nav>
+    <img src="<%=user.img%>" alt=""></br>
+  <p>From: <%= user.location %> </p>
+
+  <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+    <input type="submit" value="Delete User">
+  </form>
 </body>
+
 </html>
