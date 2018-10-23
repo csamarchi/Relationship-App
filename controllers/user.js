@@ -25,18 +25,6 @@ router.post('/', (req, res) => {
     });
 });
 
-//search route
-//router.post('/show', (req, res) => {
-//    User.find({
-//        name: req.body.name
-//    }, (err, foundUser) => {
-//        res.render('./user/show.ejs', {
-//            filteredName: req.body.name,
-//            filteredUser: foundUser
-//        });
-//    });
-//});
-
 
 //show route
 router.get('/:index', (req, res) => {

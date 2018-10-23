@@ -86,7 +86,7 @@ router.post('/login', async (req, res) => {
 //        if (err) {
 //            res.send(err);
 //        } else {
-//            res.redirect('/login/login')
+//            res.redirect('/userLogin/login')
 //        }
 //    });
 //});
