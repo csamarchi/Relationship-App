@@ -14,12 +14,25 @@
       <li><a href="/user">Home</a></li>
     </ul>
   </nav>
-    <img src="<%=user.img%>" alt=""></br>
-  <p>From: <%= user.location %> </p>
+  <img src="<%=user.img%>" alt=""></br>
+  <p>From:
+    <%= user.location %>
+  </p>
 
   <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
     <input type="submit" value="Delete User">
-  </form>
+  </form><br />
+
+  <h1>
+    <%=user.name %>'s Exes</h1>
+    <%    for ( let i = 0; i < user.ex.length; i++ ) { %>
+        <%  if (ex[i].name === user.name) { %>
+            <img src="<%=ex[i].image%>" alt="">
+      <%    } %>
+      <%  } %>
+        </main>
+
+
 </body>
 
 </html>

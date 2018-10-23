@@ -13,6 +13,18 @@ router.get('/', (req, res) => {
     });
 });
 
+//link route
+router.get('/:index/ex', (req, res) => {
+  User.findById(req.params.index, (err, userFound) => {
+    Ex.find({}, (err, exsFound) => {
+      res.render('./user/show.ejs' , {
+        user: userFound,
+        ex: exsFound
+      })
+    })
+  })
+})
+
 //new route
 router.get('/new', (req, res) => {
     res.render('./user/new.ejs')
