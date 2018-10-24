@@ -12,6 +12,7 @@
     <ul>
       <li><a href="/ex/new">Add Ex</a></li>
       <li><a href="./user/show">Your Profile</a></li>
+      <li><a href="/user">Login</a></li>
     </ul>
     <!-- Search Form -->
     <form action="/ex/showAll" method="POST">
@@ -19,7 +20,9 @@
     </form>
   </nav>
   <main>
+
     <% for (let i = 0; i < ex.length; i++) { %>
+      <%= ex[i].user.name %>
     <form action="/ex/<%=ex[i].id%>" method="GET">
       <a href="/ex/<%=ex[i].id%>">
         <%=ex[i].name%></a>

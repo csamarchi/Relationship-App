@@ -11,7 +11,7 @@ const exSchema = new mongoose.Schema({
   humor: String,
   cheap: String,
   attitude: String,
-  description: String
+  description: String,
 });
 
 module.exports = mongoose.model('Ex', exSchema);

@@ -2,12 +2,15 @@ const express = require('express');
 const router = express.Router();
 const Ex = require('../models/ex');
 const User = require('../models/user');
-
+const Login = require('../models/logininfo');
 //index route
 router.get('/', async (req, res) => {
   try {
     const allExes = await Ex.find();
+    const allLogins = await Login.find();
+
     res.render('ex/index.ejs', {
+      login: allLogins,
       ex: allExes
     });
   } catch (err) {
@@ -18,7 +21,8 @@ router.get('/', async (req, res) => {
 
 //new route
 router.get('/new', (req, res) => {
-  res.render('./ex/new.ejs', {})
+  console.log(req.session);
+  res.render('ex/new.ejs', {})
 })
 
 //post route

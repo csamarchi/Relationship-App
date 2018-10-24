@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const Login = require('../models/logininfo')
-const bcrypt = require('bcryptjs')
+const Login = require('../models/logininfo');
+const bcrypt = require('bcryptjs');
+const User = require('../models/user');
 
 
 router.get('/login', (req, res) => {
@@ -30,48 +31,40 @@ router.post('/register', async (req, res) => {
 
 
 
-    const user = await Login.create(userEntry);
+    const user = await User.create(userEntry);
     console.log(user);
+    req.session.username = user.username;
     req.session.logged = true;
     req.session.message = '';
-    res.redirect('/ex');
+    res.redirect('/user/' + user.id);
 });
 
 
 router.post('/login', async (req, res) => {
     try {
-        const foundUser = await Login.findOne({username: req.body.username});
-        console.log(foundUser)
+        const foundUser = await User.findOne({username: req.body.username});
+        console.log(foundUser.id)
 
         if (foundUser) {
 
             if (bcrypt.compareSync(req.body.password, foundUser.password)) {
                 req.session.logged = true;
 
-                res.redirect('/ex')
+                res.redirect('/user/' + foundUser.id)
             } else {
 
                 req.session.message = 'Username or Password is Wrong';
                 res.redirect('/login/login')
             }
-
-
         } else {
             req.session.message = 'Username or Password is Wrong';
             res.redirect('/login/login')
         }
-
-
-
-
     } catch (err) {
         res.send('error')
     }
-
-
-
-
 });
+
 
 
 

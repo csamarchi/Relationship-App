@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models/user')
-const Ex = require('../models/ex')
+const User = require('../models/user');
+const Ex = require('../models/ex');
+const Logininfo = require('../models/logininfo');
 
 
 //index route
@@ -25,24 +26,26 @@ router.get('/:index/ex', (req, res) => {
   })
 })
 
-//new route
-router.get('/new', (req, res) => {
-    res.render('./user/new.ejs')
-});
-
-
-//post route
-router.post('/', (req, res) => {
-    User.create(req.body, (err, exFound) => {
-        res.redirect('../ex')
-    });
-});
-
-
+// //new route
+// router.get('/new', (req, res) => {
+//     res.render('./user/new.ejs')
+// });
+//
+//
+// //post route
+// router.post('/', (req, res) => {
+//     User.create(req.body, (err, exFound) => {
+//         res.redirect('../ex')
+//     });
+// });
+//
+//
 //show route
 router.get('/:index', (req, res) => {
     User.findById(req.params.index, (err, foundUser) => {
-        res.render('./user/show.ejs', {
+      console.log(req.params.index, typeof(req.params.index));
+      console.log(foundUser);
+        res.render('user/show.ejs', {
             user: foundUser
         });
     });
