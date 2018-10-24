@@ -1,16 +1,13 @@
 const express = require('express');
-const router = express.Router();
-const Ex = require('../models/ex');
-const User = require('../models/user');
-const Login = require('../models/logininfo');
+const router  = express.Router();
+const Ex      = require('../models/ex');
+const User    = require('../models/user');
+
 //index route
 router.get('/', async (req, res) => {
   try {
     const allExes = await Ex.find();
-    const allLogins = await Login.find();
-
     res.render('ex/index.ejs', {
-      login: allLogins,
       ex: allExes
     });
   } catch (err) {
@@ -18,22 +15,47 @@ router.get('/', async (req, res) => {
   }
 });
 
+//link route
+// router.get('/:index/user', (req, res) => {
+//   Ex.findById(req.params.index, (err, exFound) => {
+//     user.find({}, (err, userFound) => {
+//       res.render('./ex/show.ejs' , {
+//         ex: exFound,
+//         user: userFound
+//       })
+//     })
+//   })
+// })
 
 //new route
 router.get('/new', (req, res) => {
-  console.log(req.session);
-  res.render('ex/new.ejs', {})
+  User.find({}, (err, allUsers) => {
+    res.render('./ex/new.ejs', {
+      user: allUsers
+    })
+  })
 })
 
 //post route
 router.post('/', async (req, res) => {
-  try {
-    await Ex.create(req.body);
-    await res.redirect('/ex')
-  } catch (err) {
-    res.send(err);
-  }
+
+  User.findById(req.body.userId, (err, foundUser) => {
+    Ex.create(req.body, (err, createdEx) => {
+      foundUser.ex.push(createdEx);
+      foundUser.save((err, data) => {
+        res.redirect('/ex')
+      });
+    });
+  });
 });
+
+  // try {
+  //   await Ex.create(req.body);
+  //   await res.redirect('/ex')
+  // } catch (err) {
+  //   res.send(err);
+  // }
+
 
 //search route
 router.post('/showAll', (req, res) => {
@@ -51,9 +73,13 @@ router.post('/showAll', (req, res) => {
 //show route
 router.get('/:index', (req, res) => {
   Ex.findById(req.params.index, (err, foundEx) => {
-    res.render('./ex/show.ejs', {
-      ex: foundEx
-    });
+    User.findOne({'ex._id': req.params.index}, (err, foundUser) => {
+      console.log(foundUser, ' this is foundUser');
+      res.render('./ex/show.ejs', {
+        ex: foundEx,
+        user: foundUser
+      });
+    })
   });
 });
 

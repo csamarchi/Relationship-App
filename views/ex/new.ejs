@@ -13,6 +13,11 @@
     </nav>
 
     <form action="/ex" method="POST">
+      <select name="userId">
+        <% for (let i = 0; i < user.length; i++) { %>
+          <option value="<%=user[i].id%>"><%=user[i].name %></option>
+      <%  } %>
+      </select></br></br>
       Name: </br> <input type="text" name="name"></br></br>
       Sex: </br> <input type="radio" name="sex" value="male"> male
                  <input type="radio" name="sex" value="female"> female</br></br>

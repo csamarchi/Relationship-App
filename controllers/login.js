@@ -29,8 +29,6 @@ router.post('/register', async (req, res) => {
     userEntry.img = req.body.img;
 
 
-
-
     const user = await User.create(userEntry);
     console.log(user);
     req.session.username = user.username;

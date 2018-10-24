@@ -12,6 +12,7 @@
   <nav>
     <ul>
       <li><a href="/user">Home</a></li>
+      <li><a href="/ex/new">Add Ex</a></li>
     </ul>
   </nav>
   <img src="<%=user.img%>" alt=""></br>
@@ -25,14 +26,16 @@
 
   <h1>
     <%=user.name %>'s Exes</h1>
-    <li><a href="/ex/new">Add Ex</a></li>
+<ul>
+  <% for (let i = 0; i < user.ex.length; i++) { %>
+    <li><a href="/ex/<%=user.ex[i].id%>"><%=user.ex[i].name%></a></li>
+  <% } %>
 
-    <%    for ( let i = 0; i < user.ex.length; i++ ) { %>
-        <%  if (req.session.logged = true) { %>
-            <img src="<%=ex[i].image%>" alt="">
-      <%    } %>
-      <%  } %>
-        </main>
+
+</ul>
+
+
+</main>
 
 
 </body>
