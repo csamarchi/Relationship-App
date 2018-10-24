@@ -2,7 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/user');
 const Ex = require('../models/ex');
-const Logininfo = require('../models/logininfo');
 
 
 //index route
@@ -26,24 +25,9 @@ router.get('/:index/ex', (req, res) => {
   })
 })
 
-// //new route
-// router.get('/new', (req, res) => {
-//     res.render('./user/new.ejs')
-// });
-//
-//
-// //post route
-// router.post('/', (req, res) => {
-//     User.create(req.body, (err, exFound) => {
-//         res.redirect('../ex')
-//     });
-// });
-//
-//
 //show route
 router.get('/:index', (req, res) => {
     User.findById(req.params.index, (err, foundUser) => {
-      console.log(req.params.index, typeof(req.params.index));
       console.log(foundUser);
         res.render('user/show.ejs', {
             user: foundUser
@@ -53,11 +37,16 @@ router.get('/:index', (req, res) => {
 
 
 //delete route
-router.delete('/:index', (req, res) => {
-    User.findByIdAndRemove(req.params.index, (err, foundUser) => {
-        res.redirect('/user')
-    });
+router.delete('/:index', async (req, res) => {
+  try {
+    await User.findByIdAndRemove(req.params.index);
+    res.redirect('/user')
+  } catch(err) {
+    res.send(err)
+  }
 });
+
+
 
 //edit route
 router.get('/:index/edit', (req, res) => {

@@ -15,17 +15,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-//link route
-// router.get('/:index/user', (req, res) => {
-//   Ex.findById(req.params.index, (err, exFound) => {
-//     user.find({}, (err, userFound) => {
-//       res.render('./ex/show.ejs' , {
-//         ex: exFound,
-//         user: userFound
-//       })
-//     })
-//   })
-// })
 
 //new route
 router.get('/new', (req, res) => {
