@@ -24,9 +24,7 @@ app.use('/login', loginController);
 app.get('/', (req, res) => {
   res.send('what up')
 })
-app.get('/', (req, res) => {
-    res.render('/')
-})
+
 
 
 
