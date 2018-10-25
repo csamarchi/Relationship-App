@@ -14,7 +14,6 @@
 
 <body>
     <!--      Nav Bar-->
-<<<<<<< HEAD
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -31,38 +30,10 @@
            </div>
       </nav>
 <!--      Page Title -->
-    <h1>Edit your Ex</h1>
-    <nav>
-      <ul>
-        <li><a href="/ex">Home</a></li>
-        <li><a href="/">Your Profile</a></li>
-      </ul>
-=======
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a><br>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ex">Check out some exes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-        </div>
->>>>>>> css
-    </nav>
+
     <!--      Page Title -->
     <div class="col">
-        <h1>Edit your Ex</h1>
-        <nav>
-            <ul>
-                <li><a href="/ex">Home</a></li>
-                <li><a href="/">Your Profile</a></li>
-            </ul>
-        </nav>
+
         <main>
             <h1> Edit
                 <%=ex.name%>
@@ -106,13 +77,14 @@
 
 
                     <li class="list-group-item"> Anything else you would like to add </br> <input type="text" name="description" value="<%=ex.description%>"></li></br>
-                    </br><input type="submit" value="Submit">
+                  </br><button type="submit" class="btn btn-secondary">Submit</button>
+
                 </form>
             </ul>
             </br></br>
             <section>
                 <form action="/ex/<%=ex.id%>?_method=DELETE" method="POST">
-                    <input type="submit" value="Delete Ex">
+                  <button type="submit" class="btn btn-secondary">Delete Ex</button>
                 </form>
             </section>
     </div>

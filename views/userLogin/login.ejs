@@ -40,7 +40,8 @@
         Sex: <input type="radio" name="sex" value="male"> male
         <input type="radio" name="sex" value="female"> female<br>
         Image: <input type="text" name="img" value=""><br>
-        Submit: <input type="submit" name="submit" id="">
+        Submit: <button type="submit" class="btn btn-secondary">Submit</button>
+
     </form>
 
     <!--If registered, login -->
@@ -48,14 +49,14 @@
     <form action="/login/login" method="POST">
         <input type="text" name="username">
         <input type="password" name="password">
-        <button type="submit">Login</button>
-    </form>
+        <button type="submit" class="btn btn-secondary">Login</button>   
+     </form>
 
     <!--Logout of session -->
 
     <h1>Logout</h1>
     <form action="/logout" method="POST">
-        <input type="submit" name="logout">
+<button type="submit" class="btn btn-secondary">Submit</button>
     </form>
 
     <!--     footer -->
