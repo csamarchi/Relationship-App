@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,59 +10,62 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title></title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!--      Nav Bar-->
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/ex">Check out some exes</a>
-        </li>
-              <li class="nav-item">
-        <a class="nav-link" href="/userLogin/login">About</a>
-      </li>
-      </ul>
-           </div>
-      </nav>
-     <h1>
-        <%=user.name %>'s page</h1>
-    <nav>
-        <ul>
-            <li><a href="/user">Home</a></li>
-            <li><a href="/ex/new">Add Ex</a></li>
-        </ul>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ex">Check out some exes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
     </nav>
-    <img src="<%=user.img%>" alt=""></br>
-    <p>From:
-        <%= user.location %>
-    </p>
+    <div class="col">
+        <h1>
+            <%=user.name %>'s page</h1>
+        <nav>
+            <ul>
+                <li><a href="/user">Home</a></li>
+                <li><a href="/ex/new">Add Ex</a></li>
+            </ul>
+        </nav>
+        <img src="<%=user.img%>" alt=""><br>
+        <p>From:
+            <%= user.location %>
+        </p>
 
-    <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-        <input type="submit" value="Delete User">
-    </form><br />
+        <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete User">
+        </form><br />
 
-    <h1>
-        <%=user.name %>'s Exes</h1>
-    <ul>
-        <% for (let i = 0; i < user.ex.length; i++) { %>
-        <li><a href="/ex/<%=user.ex[i].id%>">
-                <%=user.ex[i].name%></a></li>
-        <% } %>
+        <h1>
+            <%=user.name %>'s Exes</h1>
+        <ul>
+            <% for (let i = 0; i < user.ex.length; i++) { %>
+            <li><a href="/ex/<%=user.ex[i].id%>">
+                    <%=user.ex[i].name%></a></li>
+            <% } %>
 
 
-    </ul>
- <!--     footer-->
-<div class="footer">
-       <hr>
+        </ul>
+    </div>
+    <!--     footer-->
+    <div class="footer">
+        <hr>
         <footer>
-           <hr>
-            Created by 
+            <hr>
+            Created by
             <br>
-            Alex Fields 
+            Alex Fields
             <a href="climberfields@gmail.com">climberfields@gmail.com</a>
             <br>
             Christine Samarchi
@@ -76,5 +80,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>
