@@ -38,12 +38,6 @@ router.post('/', async (req, res) => {
   });
 });
 
-  // try {
-  //   await Ex.create(req.body);
-  //   await res.redirect('/ex')
-  // } catch (err) {
-  //   res.send(err);
-  // }
 
 
 //search route

@@ -8,6 +8,7 @@ require('./db/db');
 const exController   = require('./controllers/ex');
 const userController = require('./controllers/user');
 const loginController = require('./controllers/login');
+
 //middleware
 app.use(session({
     secret: 'This is some random secret string',
