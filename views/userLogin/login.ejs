@@ -9,7 +9,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title></title>
 </head>
 
 <body>
@@ -30,37 +30,53 @@
         </div>
     </nav>
     <!--    Register -->
-
+    
+<ul class="row">
+    <div class="col">
     <h1>Register</h1>
+   
     <form action="/login/register" method="POST">
-        Name: <input type="text" name="name" value=""><br>
-        Username: <input type="text" name="username" value=""><br>
-        Password: <input type="text" name="password" value=""><br>
-        Location: <input type="text" name="location" value=""><br>
-        Sex: <input type="radio" name="sex" value="male"> male
-        <input type="radio" name="sex" value="female"> female<br>
-        Image: <input type="text" name="img" value=""><br>
-        Submit: <button type="submit" class="btn btn-secondary">Submit</button>
-
+        Name: <input class="form-control" type="text" name="name" value="">
+        Username: <input class="form-control" type="text" name="username" value="">
+        Password: <input class="form-control" type="text" name="password" value="">
+        Location: <input class="form-control" type="text" name="location" value="">
+<!--
+        <div class="col">
+        Sex: <input class="form-control" type="radio" name="sex" value="male"> male
+        <input class="form-control" type="radio" name="sex" value="female"> female 
+        <input class="form-control" type="radio" name="sex" value="other">
+        other
+        </div>
+-->
+        Image URL: <input class="form-control" type="text" name="img" value="">
+        <input type="submit" name="Register" value="Register">
+        
     </form>
+    </div>
 
     <!--If registered, login -->
+    <div class="col">
     <h1>Login</h1>
     <form action="/login/login" method="POST">
-        <input type="text" name="username">
-        <input type="password" name="password">
-        <button type="submit" class="btn btn-secondary">Login</button>   
-     </form>
-
+        <input class="form-control col" type="text" name="username">
+        <input class="form-control col" type="password" name="password">
+<!--        <button class="col" type="submit">Login</button>-->
+        <input type="submit" name="submit" value="Login" name="Log In">
+    </form>
+</div>
     <!--Logout of session -->
-
+<div class="col">
     <h1>Logout</h1>
     <form action="/logout" method="POST">
-<button type="submit" class="btn btn-secondary">Submit</button>
+        <input type="submit" name="logout" value="Logout">
     </form>
+    
+</div>
+   </ul>
 
+   
     <!--     footer -->
-    <div class="footer">
+    <div class="footer fixed-bottom col">
         <footer>
             <hr>
             Created by
