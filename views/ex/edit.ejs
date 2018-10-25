@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,9 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
     <title></title>
-  </head>
-  <body>
+</head>
+
+<body>
     <!--      Nav Bar-->
+<<<<<<< HEAD
        <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
@@ -34,66 +37,94 @@
         <li><a href="/ex">Home</a></li>
         <li><a href="/">Your Profile</a></li>
       </ul>
+=======
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a><br>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ex">Check out some exes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+            </ul>
+        </div>
+>>>>>>> css
     </nav>
-    <main>
-      <h1> Edit <%=ex.name%></h1>
-      <img src="<%=ex.image%>" alt=""></br>
-<ul class="list-group">
-      <form action="/ex/<%=ex.id%>?_method=PUT" method="POST">
-          <li class="list-group-item">  Name: </br> <input type="text" name="name" value="<%=ex.name%>"></li></br></br>
-       
-        
-      <li class="list-group-item">             Sex: </br> <input type="radio" name="sex" value="male"> male
-      <input type="radio" name="sex" value="female"> female </li></br></br>
-                   
-                   
-     <li class="list-group-item">    Location: </br> <input type="text" name="location" value="<%=ex.location%>"></li></br></br>
-        
-        
-    <li class="list-group-item">     Paste Image: </br> <input type="text" name="image" value="<%=ex.image%>"></li></br></br>
-        
-        
-    <li class="list-group-item">     Their Best Quality: </br> <input type="text" name="best" value="<%=ex.best%>"></li></br></br>
-        
-        
-    <li class="list-group-item">     Worst Quality: </br> <input type="text" name="worst" value="<%=ex.worst%>"> </li></br></br>
-        
-        
-<li class="list-group-item">     Attractiveness Scale 1-10: <input type="range" min="1" max="10" name="attractiveness" value="<%=ex.attractiveness%>"></li></br></br>
-        
-        
-   <li class="list-group-item">      Do they have a sense of humor?</br><input type="radio" name="humor" value="yes"> So funny</br>
-                                           <input type="radio" name="humor" value="kinda"> Kinda</br>
-                                           <input type="radio" name="humor" value="no"> No sense of humor</li></br></br>
-                                           
-                                           
-   <li class="list-group-item">      Are they Cheap? <input type="radio" name="cheap" value="yes">yes
-       <input type="radio" name="cheap" value="no"> no </li></br></br>
-                        
+    <!--      Page Title -->
+    <div class="col">
+        <h1>Edit your Ex</h1>
+        <nav>
+            <ul>
+                <li><a href="/ex">Home</a></li>
+                <li><a href="/">Your Profile</a></li>
+            </ul>
+        </nav>
+        <main>
+            <h1> Edit
+                <%=ex.name%>
+            </h1>
+            <img src="<%=ex.image%>" alt=""></br>
+            <ul class="list-group">
+                <form action="/ex/<%=ex.id%>?_method=PUT" method="POST">
+                    <li class="list-group-item"> Name: </br> <input type="text" name="name" value="<%=ex.name%>"></li></br></br>
 
- <li class="list-group-item">        Good Attitude? <input type="radio" name="attitude" value="yes"> yes
-     <input type="radio" name="attitude" value="no"> no </li></br></br>
-                       
-                       
- <li class="list-group-item">        Anything else you would like to add </br> <input type="text" name="description" value="<%=ex.description%>"></li></br>
-        </br><input type="submit" value="Submit">
-      </form>
-</ul>
-    </br></br>
-      <section>
-        <form action="/ex/<%=ex.id%>?_method=DELETE" method="POST">
-          <input type="submit" value="Delete Ex">
-        </form>
-      </section>
+
+                    <li class="list-group-item"> Sex: </br> <input type="radio" name="sex" value="male"> male
+                        <input type="radio" name="sex" value="female"> female </li></br></br>
+
+
+                    <li class="list-group-item"> Location: </br> <input type="text" name="location" value="<%=ex.location%>"></li></br></br>
+
+
+                    <li class="list-group-item"> Paste Image: </br> <input type="text" name="image" value="<%=ex.image%>"></li></br></br>
+
+
+                    <li class="list-group-item"> Their Best Quality: </br> <input type="text" name="best" value="<%=ex.best%>"></li></br></br>
+
+
+                    <li class="list-group-item"> Worst Quality: </br> <input type="text" name="worst" value="<%=ex.worst%>"> </li></br></br>
+
+
+                    <li class="list-group-item"> Attractiveness Scale 1-10: <input type="range" min="1" max="10" name="attractiveness" value="<%=ex.attractiveness%>"></li></br></br>
+
+
+                    <li class="list-group-item"> Do they have a sense of humor?</br><input type="radio" name="humor" value="yes"> So funny</br>
+                        <input type="radio" name="humor" value="kinda"> Kinda</br>
+                        <input type="radio" name="humor" value="no"> No sense of humor</li></br></br>
+
+
+                    <li class="list-group-item"> Are they Cheap? <input type="radio" name="cheap" value="yes">yes
+                        <input type="radio" name="cheap" value="no"> no </li></br></br>
+
+
+                    <li class="list-group-item"> Good Attitude? <input type="radio" name="attitude" value="yes"> yes
+                        <input type="radio" name="attitude" value="no"> no </li></br></br>
+
+
+                    <li class="list-group-item"> Anything else you would like to add </br> <input type="text" name="description" value="<%=ex.description%>"></li></br>
+                    </br><input type="submit" value="Submit">
+                </form>
+            </ul>
+            </br></br>
+            <section>
+                <form action="/ex/<%=ex.id%>?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete Ex">
+                </form>
+            </section>
+    </div>
     </main>
     <!--     footer-->
-<div class="footer">
-       <hr>
+    <div class="footer">
+        <hr>
         <footer>
-           <hr>
-            Created by 
+            <hr>
+            Created by
             <br>
-            Alex Fields 
+            Alex Fields
             <a href="climberfields@gmail.com">climberfields@gmail.com</a>
             <br>
             Christine Samarchi
@@ -107,5 +138,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-  </body>
+</body>
+
 </html>

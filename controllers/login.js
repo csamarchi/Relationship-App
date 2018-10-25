@@ -51,11 +51,11 @@ router.post('/login', async (req, res) => {
             } else {
 
                 req.session.message = 'Username or Password is Wrong';
-                res.redirect('/login/login')
+                res.redirect('/login')
             }
         } else {
             req.session.message = 'Username or Password is Wrong';
-            res.redirect('/login/login')
+            res.redirect('/login')
         }
     } catch (err) {
         res.send('error')

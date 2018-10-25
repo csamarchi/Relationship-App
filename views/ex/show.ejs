@@ -22,11 +22,15 @@
         <a class="nav-link" href="/user">Login as a different user</a>
         </li>
               <li class="nav-item">
-        <a class="nav-link" href="/userLogin/login">About</a>
+                    <a class="nav-link" href="/about">About</a>
       </li>
       </ul>
            </div>
       </nav>
+<<<<<<< HEAD
+=======
+      <div class="col">
+>>>>>>> css
      <h1><%=ex.name %></h1>
   <nav>
     <ul>
@@ -51,14 +55,14 @@
       <% } else if (ex.humor === 'no') { %>
           They have no sense of humor
       <% } %>
-        </br>
+        <br>
 
       <% if (ex.cheap === 'yes') { %>
           Theyve been known to be cheap
       <% }  else if (ex.cheap === 'no'){ %>
           They arent cheap
       <% }%>
-        </br>
+        <br>
 
       <% if (ex.attitude === 'yes') { %>
           They have a great attitude
@@ -70,8 +74,9 @@
     <p><%=ex.description %></p>
     <section>
       <a href="/ex/<%=ex.id%>/edit">Edit Ex</a>
-    </section></br></br>
+    </section><br><br>
   </main>
+</div>
 <!--     footer-->
 <div class="footer">
        <hr>
