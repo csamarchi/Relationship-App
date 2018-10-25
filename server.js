@@ -22,7 +22,7 @@ app.use('/user', userController);
 app.use('/login', loginController);
 
 app.get('/', (req, res) => {
-  res.send('what up')
+  res.render('index.ejs')
 })
 
 
