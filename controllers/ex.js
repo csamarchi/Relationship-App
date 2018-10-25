@@ -67,13 +67,15 @@ router.get('/:index', (req, res) => {
 });
 
 //delete route
-router.delete('/:index', async (req, res) => {
-  try {
-    await Ex.findByIdAndRemove(req.params.index);
-    res.redirect('/ex')
-  } catch(err) {
-    res.send(err)
-  }
+router.delete('/:id', (req, res) => {
+    Ex.findByIdAndRemove(req.params.id, (err, deletedEx) => {
+      User.findOne({'ex._id': req.params.id}, (err, foundUser) => {
+        foundUser.ex.id(req.params.id).remove();
+        foundUser.save((err, data) => {
+          res.redirect('/ex');
+        })
+      });
+    });
 });
 
 //edit route
