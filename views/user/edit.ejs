@@ -42,10 +42,12 @@
                 Username: <input type="text" name="username" value="<%=user.username%>"><br>
                 Password: <input type="text" name="password" value="<%=user.password%>"><br>
                 Location: <input type="text" name="location" value="<%=user.location%>"><br>
-                Sex: <input type="radio" name="sex" value="<%=user.sex%>"><br>
-                Image: <input type="text" name="img" value="<%=user.image%>"><br>
-                Edit User: <input type="submit" value="Submit">
+                Profile Picture: <input type="text" name="img" value="<%=user.image%>"><br>
+                <input type="submit" value="Edit">
             </form>
+            <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete User">
+        </form>
         </p>
     </div>
     <!--     footer-->
