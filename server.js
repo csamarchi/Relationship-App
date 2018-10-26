@@ -1,13 +1,21 @@
+var mongoUri = process.env.MONGODB_URI;
 const express        = require('express');
 const app            = express();
 const bodyParser     = require('body-parser');
 const methodOverride = require('method-override');
 const session = require('express-session');
+const mongoose = require('mongoose');
+
 require('./db/db');
 
 const exController   = require('./controllers/ex');
 const userController = require('./controllers/user');
 const loginController = require('./controllers/login');
+
+
+var mongoUri = process.env.MONGODB_URI || 'mongodb://localhost:27017/grocery_app_dev';
+
+mongoose.connect(mongoUri);
 
 //static styles 
 app.use(express.static('public'));
@@ -37,10 +45,11 @@ app.get('/about', (req, res) => {
 
 
 
+port = process.env.PORT || 3000;
 
 
 
-
-app.listen(3000, () => {
-  console.log('listen on port');
-})
+app.listen(port);
+console.log('---------------------------------');
+console.log('Server running on port: ' + port);
+console.log('---------------------------------');
