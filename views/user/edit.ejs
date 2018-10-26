@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 
     <title></title>
 </head>
@@ -44,10 +45,10 @@
                 Password: <input type="text" name="password" value="<%=user.password%>"><br>
                 Location: <input type="text" name="location" value="<%=user.location%>"><br>
                 Profile Picture: <input type="text" name="img" value="<%=user.image%>"><br>
-                <input type="submit" value="Edit">
-            </form>
+                <button type="input" class="btn btn-secondary">Edit</button>
+            </form></br>
             <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete User">
+              <button type="input" class="btn btn-secondary">Delete User</button>
         </form>
         </p>
     </div>

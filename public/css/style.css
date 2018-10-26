@@ -1,0 +1,22 @@
+body {
+    font-family: "Verdana", serif;
+}
+
+.container{
+        background-image: image("../Stinglogo.png");
+
+}
+
+h1{
+    font-style:oblique;
+}
+
+footer{
+    background-color: wheat;
+    justify-content: flex-end;
+}
+.logo {
+    height:80px;
+    width: 80px;
+    left: -50%;
+}
