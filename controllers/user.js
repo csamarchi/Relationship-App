@@ -39,7 +39,8 @@ router.get('/:index', (req, res) => {
 //delete route
 router.delete('/:index', async (req, res) => {
   try {
-    await User.findByIdAndRemove(req.params.index);
+   const deletedUser = await User.findByIdAndRemove(req.params.index);
+      console.log(deletedUser);
     res.redirect('/user')
   } catch(err) {
     res.send(err)
