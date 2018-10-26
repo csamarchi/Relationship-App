@@ -62,6 +62,18 @@ router.post('/login', async (req, res) => {
     }
 });
 
+router.get('/logout', (req, res) => {
+   // this basically restarts the session
+   // and clears out all the properties that we set
+   // on the session object
+   req.session.destroy((err) => {
+       if (err) {
+           res.send(err);
+       } else {
+           res.redirect('/userLogin/login')
+       }
+   });
+});
 
 
 
