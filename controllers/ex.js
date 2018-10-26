@@ -56,6 +56,7 @@ router.post('/showAll', (req, res) => {
 //show route
 router.get('/:index', (req, res) => {
   Ex.findById(req.params.index, (err, foundEx) => {
+      console.log(foundEx)
     User.findOne({'ex._id': req.params.index}, (err, foundUser) => {
       console.log(foundUser, ' this is foundUser');
       res.render('./ex/show.ejs', {
