@@ -92,13 +92,16 @@ router.get('/:index/edit', async (req, res) => {
 });
 
 //update route
-router.put('/:index', async (req, res) => {
-  try {
-    await Ex.findByIdAndUpdate(req.params.index, req.body)
-    res.redirect('/ex')
-  } catch(err) {
-    res.send(err)
-  }
+router.put('/:id', (req, res) => {
+  Ex.findOneAndUpdate(req.params.id, req.body, {new: true}, (err, updatedEx) => {
+    User.findOne({'ex._id': req.params.id}, (err, foundUser) => {
+      foundUser.ex.id(req.params.id).remove();
+      foundUser.ex.push(updatedEx)
+      foundUser.save((err, data) => {
+        res.redirect('/ex');
+      });
+    });
+  });
 })
 
 
