@@ -25,6 +25,7 @@ Enable google search api (have code, need to test applicability)
 Top poster notifications 
 Most reviewed person area 
 
+![alt text](login_page.png)
 
 ### Wireframes
 Homepage: https://wireframe.cc/i5poJU
@@ -35,7 +36,7 @@ State Search Page:  https://wireframe.cc/WQCJf2
 Location Show: https://wireframe.cc/d6oeSy
 Person Reviewed Page: https://wireframe.cc/QV9jTS
 
-Technologies used:
+### Technologies used:
 HTML 
 CSS 
 JAVASCRIPT
