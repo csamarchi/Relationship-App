@@ -4,44 +4,53 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-
+    <style>
+      body {
+        background-color: #f9ec86;
+        width: 100%;
+      }
+      h1 {
+        text-align: center;
+      }
+      .searchForm {
+        align-items: center;
+      }
+    </style>
     <title>Hello, world!</title>
   </head>
   <body>
        <!--      Nav Bar-->
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/user">Login as a different user</a>
-        </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-      </li>
-      </ul>
-      <img class="logo" src="./Stinglogo.png" alt=""> 
-           </div>
-      </nav>
+       <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/user">Login as a different user</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/about">About</a>
+            </li>
+            </ul>
+            <img class="logo" src="./Stinglogo.png" alt="">
+          </div>
+        </nav>
+
 
       <div class="col">
-
     <h1>Ex Index Page</h1></br>
 
     <!-- Search Form -->
-    <form action="/ex/showAll" method="POST">
-      <input type="text" name="name" placeholder="Search...">
-      <button type="input" class="btn btn-secondary" placeholder="Search...">Search...</button>
-    </form></br>
-
-    </form>
-  </nav>
+    <div class="searchForm">
+      <form action="/ex/showAll" method="POST">
+        <input type="text" name="name" placeholder="Search...">
+        <button type="input" class="btn btn-secondary" placeholder="Search...">Submit</button>
+      </form></br>
+    </div>
   <main>
     <div class="container">
       <div class="row">
@@ -57,28 +66,11 @@
          </div>
          </div>
   </main>
-  <!--     footer-->
   <ul>
     <form action="/ex/new">
     <button type="input" class="btn btn-secondary">Add Ex</button>
     </form>
   </ul>
-
-
-<div class="footer">
-        <footer>
-           <hr>
-            Created by
-            <br>
-            Alex Fields
-            <a href="climberfields@gmail.com">climberfields@gmail.com</a>
-            <br>
-            Christine Samarchi
-            <a href="csamarchi@gmail.com">csamarchi@gmail.com</a>
-        </footer>
-    </div>
-      </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

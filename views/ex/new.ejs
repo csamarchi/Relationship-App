@@ -4,40 +4,42 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-
+    <style>
+      body {
+        background-color: #f9ec86;
+        width: 100%;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
     <title>Hello, world!</title>
   </head>
   <body>
-    <!--      Nav Bar-->
-       <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item active">
-        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="/user">Login as a different user</a>
-        </li>
-              <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-      </li>
-      </ul>
-           </div>
-      </nav>
-
+    <!-- Nav Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+     <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+       <ul class="navbar-nav">
+         <li class="nav-item active">
+           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+         </li>
+         <li class="nav-item">
+           <a class="nav-link" href="/login">Login as a different user</a>
+           </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/about">About</a>
+         </li>
+         </ul>
+         <img class="logo" src="./Stinglogo.png" alt="">
+       </div>
+     </nav>
        <div class="col">
-
-
-
     <h1>Add an Ex</h1>
     <nav>
-
     </nav>
-
     <form action="/ex" method="POST">
       <select name="userId">
         <% for (let i = 0; i < user.length; i++) { %>
@@ -67,34 +69,6 @@
 
     </form>
     </div>
-
-<!--     footer-->
-<div >
-    <footer>
-        <hr>
-        Created by
-        <br>
-        Alex Fields
-        <a href="climberfields@gmail.com">climberfields@gmail.com</a>
-        <br>
-        Christine Samarchi
-        <a href="csamarchi@gmail.com">csamarchi@gmail.com</a>
-    </footer>
-</div>
-
-<div class="footer">
-        <footer>
-           <hr>
-            Created by
-            <br>
-            Alex Fields
-            <a href="climberfields@gmail.com">climberfields@gmail.com</a>
-            <br>
-            Christine Samarchi
-            <a href="csamarchi@gmail.com">csamarchi@gmail.com</a>
-        </footer>
-    </div>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

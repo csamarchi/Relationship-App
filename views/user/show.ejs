@@ -9,27 +9,37 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
-
+    <style>
+      body {
+        background-color: #f9ec86;
+        width: 100%;
+      }
+      h1 {
+        text-align: center;
+      }
+    </style>
     <title></title>
 </head>
 
 <body>
-    <!--      Nav Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ex">Check out some exes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+  <!-- Nav Bar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+   <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+     <ul class="navbar-nav">
+       <li class="nav-item active">
+         <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+       </li>
+       <li class="nav-item">
+         <a class="nav-link" href="/login">Login as a different user</a>
+         </li>
+           <li class="nav-item">
+             <a class="nav-link" href="/about">About</a>
+       </li>
+       </ul>
+       <img class="logo" src="./Stinglogo.png" alt="">
+     </div>
+   </nav>
+
     <div class="col">
         <h1>
             <%=user.name %>'s page</h1>

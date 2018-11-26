@@ -1,92 +1,68 @@
 <!doctype html>
 <html lang="en">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!--   CSS  -->
-    <link rel="stylesheet" href="./css/style.css">
-
-    <title></title>
+  <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <!--   CSS  -->
+      <link rel="stylesheet" type="text/css" href="./css/style.css">
+      <style>
+        body {
+          background-color: #f9ec86;
+          width: 100%;
+        }
+        h1 {
+          text-align: center;
+          margin-top: 10px;
+        }
+      </style>
+      <title></title>
   </head>
-  <body>
-  <!--      Nav Bar-->
-</head>
+      <body>
+        <!-- Nav Bar -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+         <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+           <ul class="navbar-nav">
+             <li class="nav-item active">
+               <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link" href="/login">Login as a different user</a>
+               </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="/about">About</a>
+             </li>
+             </ul>
+             <img class="logo" src="./Stinglogo.png" alt="">
+           </div>
+         </nav>
+         
+          <div class="container">
+              <h1>Welcome!</h1>
+              <p> Aloha and welcome to sting! Please agree to the following terms and conditions before proceeding.
+                  You as a user/observer will abide by the following rules:
+                  <ul>
+                      <li> Posting of information of other persons, including but not limited to </li>
+                      <li> Full or partial nudity</li>
+                      <li> Addresses or vehicles owned</li>
+                      <li> Social media information</li>
+                      <li> Employment or related information</li>
+                      <li> Family and/or friends </li>
+                  </ul>
+                  Please check the box below to agree to the terms listed above.
+                  <br>
+                  <input type="checkbox" name="option[]" value="option1" required>
 
-<body>
-    <!--      Nav Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <div class="container">
-
-    <!--     footer-->
-<div class="footer fixed-bottom col">
-       <hr>
-        <footer>
-           <hr>
-            Created by
-            <br>
-            Alex Fields
-            <a href="climberfields@gmail.com">climberfields@gmail.com</a>
-            <br>
-            Christine Samarchi
-            <a href="csamarchi@gmail.com">csamarchi@gmail.com</a>
-        </footer>
-    </div>
-</div>
-
-        <h1>Homepage</h1>
-        <p>
-            Aloha and welcome to sting! Please agree to the following terms and conditions before proceeding.
-            You as a user/observer will abide by the following rules:
-            <ul>
-                <li>
-                    Posting of information of other persons, including but not limited to </li>
-                <li> Full or partial nudity</li>
-                <li>Addresses or vehicles owned</li>
-                <li>Social media information</li>
-                <li> Employment or related information</li>
-                <li>Family and/or friends </li>
-
-
-            </ul>
-            Please check the box below to agree to the terms listed above.
-            <br>
-            <input type="checkbox" name="option[]" value="option1" required>
-
-            <form action="/login">
-              <button type="input" class="btn btn-secondary">Submit</button>
-                <submit></submit>
-                <!--     footer-->
-                <div class="footer fixed-bottom col">
-                    <footer>
-                        <hr>
-                        Created by
-                        <br>
-                        Alex Fields
-                        <a href="climberfields@gmail.com">climberfields@gmail.com</a>
-                        <br>
-                        Christine Samarchi
-                        <a href="csamarchi@gmail.com">csamarchi@gmail.com</a>
-                    </footer>
-                </div>
-    </div>
-
+                  <form action="/login">
+                    <button type="input" class="btn btn-secondary">Submit</button>
+                      <submit></submit>
+          </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-
+  </body>
 </html>

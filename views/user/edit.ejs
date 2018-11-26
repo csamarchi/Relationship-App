@@ -1,76 +1,67 @@
 <!doctype html>
 <html lang="en">
+  <head>
+      <!-- Required meta tags -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!--CSS  -->
+      <link rel="stylesheet" href="css/style.css">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <link rel="stylesheet" href="./css/style.css">
+      <style>
+        body {
+          background-color: #f9ec86;
+          width: 100%;
+        }
+        h1 {
+          text-align: center;
+        }
+      </style>
+      <title></title>
+  </head>
+  <body>
+      <!--      Nav Bar-->
+      <nav class="navbar navbar-expand-lg navbar-light bg-secondary">
+          <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                  <li class="nav-item active">
+                      <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/login">Register or Login</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/ex">Check out some exes</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/about">About</a>
+                  </li>
+              </ul>
+          </div>
+      </nav>
+      <!--        Edit a User title -->
+      <div class="col">
+          <h1>Edit a User</h1>
+          <p>
+              <form action="/user/<%=user.id%>?_method=PUT" method="POST">
+                  Name: <input type="text" name="name" value="<%=user.name%>"><br>
+                  Username: <input type="text" name="username" value="<%=user.username%>"><br>
+                  Password: <input type="text" name="password" value="<%=user.password%>"><br>
+                  Location: <input type="text" name="location" value="<%=user.location%>"><br>
+                  Profile Picture: <input type="text" name="img" value="<%=user.image%>"><br>
+                  <button type="input" class="btn btn-secondary">Edit</button>
+              </form></br>
+              <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
+                <button type="input" class="btn btn-secondary">Delete User</button>
+          </form>
+          </p>
+      </div>
 
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!--CSS  -->
-    <link rel="stylesheet" href="css/style.css">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="./css/style.css">
-
-    <title></title>
-</head>
-
-<body>
-    <!--      Nav Bar-->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/login">Register or Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/ex">Check out some exes</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/about">About</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-    <!--        Edit a User title -->
-    <div class="col">
-        <h1>Edit a User</h1>
-        <p>
-            <form action="/user/<%=user.id%>?_method=PUT" method="POST">
-                Name: <input type="text" name="name" value="<%=user.name%>"><br>
-                Username: <input type="text" name="username" value="<%=user.username%>"><br>
-                Password: <input type="text" name="password" value="<%=user.password%>"><br>
-                Location: <input type="text" name="location" value="<%=user.location%>"><br>
-                Profile Picture: <input type="text" name="img" value="<%=user.image%>"><br>
-                <button type="input" class="btn btn-secondary">Edit</button>
-            </form></br>
-            <form action="/user/<%=user.id%>?_method=DELETE" method="POST">
-              <button type="input" class="btn btn-secondary">Delete User</button>
-        </form>
-        </p>
-    </div>
-    <!--     footer-->
-    <div class="footer fixed-bottom col">
-        <footer>
-            <hr>
-            Created by
-            <br>
-            Alex Fields
-            <a href="climberfields@gmail.com">climberfields@gmail.com</a>
-            <br>
-            Christine Samarchi
-            <a href="csamarchi@gmail.com">csamarchi@gmail.com</a>
-        </footer>
-    </div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-</body>
-
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
 </html>
